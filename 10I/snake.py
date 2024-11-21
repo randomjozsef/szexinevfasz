@@ -3,13 +3,18 @@ import pygame
 import time
 import random
 
-snake_speed = 15
+kigyo_sebesseg = 30
 
 # Window size
-window_x = 1920
-window_y = 1080
+window_x = 2560
+window_y = 1600
 
 # defining colors
+kigyo_szin = pygame.Color(0, 255, 0)
+hatter_szin = pygame.Color(255, 255, 255)
+alma_szin = pygame.Color(255, 0, 0)
+pont_szin = pygame.Color(0, 0, 0)
+
 black = pygame.Color(0, 0, 0)
 white = pygame.Color(255, 255, 255)
 red = pygame.Color(255, 0, 0)
@@ -20,7 +25,7 @@ blue = pygame.Color(0, 0, 255)
 pygame.init()
 
 # Initialise game window
-pygame.display.set_caption('GeeksforGeeks Snakes')
+pygame.display.set_caption('Than snake game')
 game_window = pygame.display.set_mode((window_x, window_y))
 
 # FPS (frames per second) controller
@@ -57,7 +62,7 @@ def show_score(choice, color, font, size):
     
     # create the display surface object 
     # score_surface
-    score_surface = score_font.render('Score : ' + str(score), True, color)
+    score_surface = score_font.render('Pontok : ' + str(score), True, color)
     
     # create a rectangular object for the text
     # surface object
@@ -75,7 +80,7 @@ def game_over():
     # creating a text surface on which text 
     # will be drawn
     game_over_surface = my_font.render(
-        'Your Score is : ' + str(score), True, red)
+        'Elért pontok: ' + str(score), True, red)
     
     # create a rectangular object for the text 
     # surface object
@@ -150,19 +155,26 @@ while True:
                           random.randrange(1, (window_y//10)) * 10]
         
     fruit_spawn = True
-    game_window.fill(black)
+    game_window.fill(hatter_szin)
     
     for pos in snake_body:
-        pygame.draw.rect(game_window, green,
+        pygame.draw.rect(game_window, kigyo_szin,
                          pygame.Rect(pos[0], pos[1], 20, 20))
-    pygame.draw.rect(game_window, white, pygame.Rect(
+    pygame.draw.rect(game_window, alma_szin, pygame.Rect(
         fruit_position[0], fruit_position[1], 20, 20))
 
     # Game Over conditions
-    if snake_position[0] < 0 or snake_position[0] > window_x-10:
-        game_over()
-    if snake_position[1] < 0 or snake_position[1] > window_y-10:
-        game_over()
+    if snake_position[0] < 0:
+        snake_position[0] = window_x - 1
+
+    if snake_position[0] > window_x:
+        snake_position[0] = 0
+
+    if snake_position[1] < 0:
+        snake_position[1] = window_y
+
+    if snake_position[1] > window_y:
+        snake_position[1] = 0
 
     # Touching the snake body
     for block in snake_body[1:]:
@@ -170,10 +182,10 @@ while True:
             game_over()
 
     # displaying score continuously
-    show_score(1, white, 'times new roman', 20)
+    show_score(1, pont_szin, 'times new roman', 20)
 
     # Refresh game screen
     pygame.display.update()
 
     # Frame Per Second /Refresh Rate
-    fps.tick(snake_speed)
+    fps.tick(kigyo_sebesseg)
