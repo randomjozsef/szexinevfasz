@@ -6,8 +6,8 @@ import random
 kigyo_sebesseg = 30
 
 # Window size
-window_x = 2560
-window_y = 1600
+window_x = 1920
+window_y = 1080
 
 # defining colors
 kigyo_szin = pygame.Color(0, 255, 0)
