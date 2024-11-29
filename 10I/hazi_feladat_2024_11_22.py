@@ -10,12 +10,15 @@ konyvek = [
 # Lista hozzáférés példa
 def lista_hozzaferes(konyvek):
     for i in konyvek:
-        print(i['cím'])# A kettőspont előtti névvel lehet hozzáférni az értékekhez. (cím, szerző, kölcsönzések_száma, elérhető)
+        print(i['szerző'])# A kettőspont előtti névvel lehet hozzáférni az értékekhez. (cím, szerző, kölcsönzések_száma, elérhető)
         # Így lehet hozzáférni az eltárolt értékekhez.
 
 # Összegzés tétele
 def osszes_kolcsonzes(konyvek):
-    return konyvek
+    osszeg = 0
+    for i in konyvek:
+        osszeg += i['kölcsönzések_száma']
+    return osszeg
 
 # Megszámlálás tétele
 def elerheto_konyvek_szama(konyvek):
