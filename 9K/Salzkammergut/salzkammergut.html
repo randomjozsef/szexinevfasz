@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="2">
+    <meta http-equiv="refresh" content="3">
     <title>Salzkammergut</title>
-    
+    <style>
+        .bigtable{
+            border: 2px solid #55F;
+            border-radius: 5px;
+            margin: auto;
+            border-spacing: 5px;
+        }
+        .bigtable td{
+            text-align: center;
+            width: 7em;
+            height: 4em;
+            border-radius: 5px;
+            background-color: turquoise;
+            box-shadow: 2px 2px blue;
+            padding: 0px;
+        }
+        img{
+            display: flex;
+            width: 7em;
+            height: 4em;
+            object-fit: cover;
+            border-radius: 5px;
+            margin: 0px;
+        }
+        tr td:first-child {
+            padding-left: 10px;
+            text-align: left;
+            background-color: #99F;
+        }
+        .bigtable tr:first-child td {
+            background-color: darkturquoise;
+            font-weight: bold;
+            color: #55F;
+        }
+        tr td:last-child{
+            background-color: gainsboro;
+        }
+        .bigtable tr:first-child td:last-child{
+            background-color: #AAA;
+        }
+    </style>
 </head>
 <body>
     <table class="bigtable">
@@ -65,12 +105,12 @@
         </tr>
         <tr>
             <td>fotó</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><img src="./lake-attersee.jpg"></td>
+            <td><img src="./lake-traunsee.jpg"></td>
+            <td><img src="./lake-mondsee.jpg"></td>
+            <td><img src="./lake-wolfgangsee.jpg"></td>
+            <td><img src="./lake-hallstattersee.jpg"></td>
+            <td><img src="./velencei-to.jpg"></td>
         </tr>
     </table>
 </body>
