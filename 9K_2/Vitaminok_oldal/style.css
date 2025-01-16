@@ -1,0 +1,43 @@
+.cimcontainer{
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nagycim{
+    margin-bottom: 0px;
+    padding-right: 50px;
+}
+.alcim{
+    margin-top: 0px;
+    padding-left: 50px;
+}
+.cimkep{
+    display: block;
+    margin: auto;
+    height: 250px;
+    margin-bottom: 100px;
+}
+.vitamin_right, .vitamin_left{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.vitamin_left p{
+    padding-left: 35px;
+}
+.vitamin_left *{
+    text-align: left;
+}
+
+.vitamin_right p{
+    padding-right: 35px;
+}
+.vitamin_right *{
+    text-align: left;
+}
+
+.flexcont_right{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
