@@ -35,3 +35,13 @@ body{
     color: blue;
     font-weight: bold;
 }
+.egyresz{
+    display: flex;
+    background-color: #BBB;
+    border: 1px solid black;
+    border-radius: 10px 10px;
+    padding: 10px
+}
+.egyresz > img{
+    margin-right: 30px;
+}
